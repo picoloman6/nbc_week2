@@ -43,11 +43,10 @@ main {
   height: 430px;
 
   background: white;
-  margin: 15px 15px 15px 15px;
+  margin: 20px 15px 20px 15px;
   padding: 15px 10px 10px 15px;
 
   gap: 10px;
-
   overflow: hidden;
 }
 
@@ -73,7 +72,7 @@ main {
   word-break: break-all;
   overflow: auto;
 }
-
+/* ... */
 @keyframes marquee {
   from {
     transform: translateX(20%);
