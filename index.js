@@ -6,6 +6,7 @@ const $searchButton = document.querySelector('.search-button');
 // 전역 상태
 let page = 1;
 
+// 영화 정보 가져오기
 const getData = async () => {
   const url = `https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=${page}`;
   const options = {
@@ -20,7 +21,6 @@ const getData = async () => {
   try {
     const res = await fetch(url, options);
     const data = await res.json();
-    console.log(data);
     const results = data.results.map(v => ({
       title: v['title'],
       rating: v['vote_average'],
@@ -33,6 +33,7 @@ const getData = async () => {
   }
 };
 
+// 영화 정보 DOM 생성
 const makeMovieCard = data => {
   const { title, rating, posterUrl, overview } = data;
 
@@ -66,6 +67,7 @@ const makeMovieCard = data => {
   $main.appendChild($wrapper);
 };
 
+// 페이지 시작 후 이벤트
 document.addEventListener('DOMContentLoaded', async () => {
   //   const data = await getData();
   const data = [];
@@ -97,24 +99,34 @@ document.addEventListener('DOMContentLoaded', async () => {
   });
 });
 
+// 검색
 $searchButton.addEventListener('click', e => {
   const text = $searchInput.value.toLowerCase();
   const movieCards = document.querySelectorAll('.movie-card');
+  const errMsg = document.querySelector('.search-err-msg');
 
   e.preventDefault();
 
   if (text === '') {
-    alert('글자를 입력하세요');
+    errMsg.textContent = '글자를 입력하세요.';
+    errMsg.classList.remove('hidden');
+    return;
+  }
+
+  if (text.length < 2) {
+    errMsg.textContent = '두 글자 이상 입력하세요.';
+    errMsg.classList.remove('hidden');
     return;
   }
 
   movieCards.forEach(v => {
     const title = v.childNodes[1].textContent.toLowerCase();
-    console.log(text, title, title.includes(text));
     if (!title.includes(text)) {
       v.classList.add('hidden');
     } else {
       v.classList.remove('hidden');
     }
   });
+
+  errMsg.classList.add('hidden');
 });

@@ -92,10 +92,28 @@ main {
 }
 
 nav {
-  height: 40px;
+  display: flex;
+  justify-content: center;
+
+  height: 60px;
 
   background: #f5f5dc;
   border-bottom: 1px solid black;
+
+  gap: 30px;
+}
+
+.search-wrapper {
+  margin-top: 10px;
+}
+
+.search-err-msg {
+  color: red;
+  font-size: 14px;
+}
+
+.page-wrapper {
+  margin-top: 10px;
 }
 
 .hidden {
