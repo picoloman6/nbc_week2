@@ -27,7 +27,7 @@ const getData = async () => {
   try {
     const res = await fetch(url, options);
     const data = await res.json();
-    const results = data.results.map(v => ({
+    const results = data.results.map((v) => ({
       id: v['id'],
       title: v['title'],
       rating: v['vote_average'],
@@ -51,7 +51,7 @@ const getData = async () => {
 };
 
 // 영화 정보 DOM 생성
-const makeMovieCard = data => {
+const makeMovieCard = (data) => {
   const { id, title, rating, posterUrl, overview } = data;
 
   const $wrapper = document.createElement('div');
@@ -77,7 +77,7 @@ const makeMovieCard = data => {
   $image.dataset.id = id;
   $overview.textContent = overview;
 
-  $image.addEventListener('click', e => {
+  $image.addEventListener('click', (e) => {
     alert(`영화 아이디 : ${e.target.dataset.id}`);
   });
 
@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   try {
     const data = await getData();
 
-    data.forEach(v => {
+    data.forEach((v) => {
       makeMovieCard(v);
     });
   } catch (e) {
@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 });
 
 // 제목 검색
-$searchButton.addEventListener('click', e => {
+$searchButton.addEventListener('click', (e) => {
   const text = $searchInput.value.toLowerCase();
   const movieCards = document.querySelectorAll('.movie-card');
   const errMsg = document.querySelector('.search-err-msg');
@@ -122,7 +122,7 @@ $searchButton.addEventListener('click', e => {
     return;
   }
 
-  movieCards.forEach(v => {
+  movieCards.forEach((v) => {
     const title = v.childNodes[1].textContent.toLowerCase();
     if (!title.includes(text)) {
       v.classList.add('hidden');
@@ -135,7 +135,7 @@ $searchButton.addEventListener('click', e => {
 });
 
 // 페이지 변경
-$pageButton.addEventListener('click', async e => {
+$pageButton.addEventListener('click', async (e) => {
   let data;
   const value = $pageInput.value;
   const num = value * 1;
@@ -165,7 +165,7 @@ $pageButton.addEventListener('click', async e => {
     $main.removeChild($main.firstChild);
   }
 
-  data.forEach(v => {
+  data.forEach((v) => {
     makeMovieCard(v);
   });
 
@@ -175,7 +175,7 @@ $pageButton.addEventListener('click', async e => {
 // 초기화 누르면 검색 이전으로
 $serachResetButton.addEventListener('click', () => {
   const movieCards = document.querySelectorAll('.movie-card');
-  movieCards.forEach(v => {
+  movieCards.forEach((v) => {
     if (v.classList.contains('hidden')) {
       v.classList.remove('hidden');
     }

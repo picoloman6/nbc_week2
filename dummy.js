@@ -22,6 +22,6 @@ for (let i = 0; i < 20; i++) {
     });
   }
 }
-data.forEach(v => {
+data.forEach((v) => {
   makeMovieCard(v);
 });
