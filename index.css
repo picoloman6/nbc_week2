@@ -1,3 +1,4 @@
+/* 글로벌 스타일 */
 body {
   width: 70%;
   min-width: 700px;
@@ -6,6 +7,7 @@ body {
   margin-top: 0;
 }
 
+/* header */
 header {
   display: flex;
 
@@ -20,6 +22,7 @@ header > h1 {
   margin: auto;
 }
 
+/* main */
 main {
   display: flex;
   justify-content: center;
@@ -44,6 +47,8 @@ main {
   padding: 15px 10px 10px 15px;
 
   gap: 10px;
+
+  overflow: hidden;
 }
 
 .movie-card-image {
@@ -52,8 +57,14 @@ main {
 }
 
 .movie-card-title {
-  font-size: 18px;
+  font-size: 17px;
   font-weight: bold;
+  text-align: center;
+}
+
+.slide-text {
+  white-space: nowrap;
+  animation: marquee 5s linear infinite;
 }
 
 .movie-card-content {
@@ -61,4 +72,13 @@ main {
 
   word-break: break-all;
   overflow: auto;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(20%);
+  }
+  to {
+    transform: translateX(-70%);
+  }
 }
