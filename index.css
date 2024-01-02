@@ -40,7 +40,7 @@ main {
 
   width: 20%;
   min-width: 250px;
-  height: 430px;
+  height: 450px;
 
   background: white;
   margin: 20px 15px 20px 15px;
@@ -66,21 +66,36 @@ main {
   animation: marquee 5s linear infinite;
 }
 
-.movie-card-content {
+.movie-card-overview {
   height: 20%;
 
   word-break: break-all;
   overflow: auto;
 }
 
-.movie-card-content::-webkit-scrollbar {
+.movie-card-overview::-webkit-scrollbar {
   width: 6px;
   height: 100%;
 }
 
-.movie-card-content::-webkit-scrollbar-thumb {
+.movie-card-overview::-webkit-scrollbar-thumb {
   background: #a0a0a0;
   border-radius: 5px;
+}
+
+.movie-card-rating {
+  align-self: self-end;
+
+  color: #c92cc9;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+nav {
+  height: 40px;
+
+  background: #f5f5dc;
+  border-bottom: 1px solid black;
 }
 
 @keyframes marquee {
