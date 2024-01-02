@@ -95,7 +95,7 @@ nav {
   display: flex;
   justify-content: center;
 
-  height: 60px;
+  height: 70px;
 
   background: #f5f5dc;
   border-bottom: 1px solid black;
@@ -103,17 +103,14 @@ nav {
   gap: 30px;
 }
 
-.search-wrapper {
-  margin-top: 10px;
-}
-
 .search-err-msg {
   color: red;
   font-size: 14px;
 }
 
-.page-wrapper {
-  margin-top: 10px;
+.page-err-msg {
+  color: red;
+  font-size: 14px;
 }
 
 .hidden {
