@@ -8,7 +8,7 @@ const $pageButton = document.querySelector('.page-button');
 
 // 전역 상태
 let page = 1;
-let totalPages = 500;
+let totalPages = null;
 const cache = {};
 
 // 영화 정보 가져오기
@@ -27,15 +27,22 @@ const getData = async () => {
     const res = await fetch(url, options);
     const data = await res.json();
     const results = data.results.map(v => ({
+      id: v['id'],
       title: v['title'],
       rating: v['vote_average'],
       posterUrl: `https://image.tmdb.org/t/p/w500${v['poster_path']}`,
       overview: v['overview']
     }));
 
-    totalPages = data['total_pages'];
-    $pageLabel.textContent = `페이지 변경(최대 ${totalPages})`;
-    cache[page] = results;
+    if (totalPages === null) {
+      totalPages = data['total_pages'];
+      $pageLabel.textContent = `페이지 변경(최대 ${totalPages})`;
+    }
+
+    if (!cache[page]) {
+      cache[page] = results;
+    }
+
     return results;
   } catch (e) {
     console.log(e);
@@ -44,7 +51,7 @@ const getData = async () => {
 
 // 영화 정보 DOM 생성
 const makeMovieCard = data => {
-  const { title, rating, posterUrl, overview } = data;
+  const { id, title, rating, posterUrl, overview } = data;
 
   const $wrapper = document.createElement('div');
   const $title = document.createElement('div');
@@ -66,7 +73,12 @@ const makeMovieCard = data => {
   $rating.textContent = `Average Rating : ${String(rating).padEnd(5, '0')}`;
   $image.src = posterUrl;
   $image.alt = 'no photo';
+  $image.dataset.id = id;
   $overview.textContent = overview;
+
+  $image.addEventListener('click', e => {
+    alert(`영화 아이디 : ${e.target.dataset.id}`);
+  });
 
   $wrapper.appendChild($image);
   $wrapper.appendChild($title);

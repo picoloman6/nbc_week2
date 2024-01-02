@@ -53,6 +53,8 @@ main {
 .movie-card-image {
   width: 90%;
   height: 70%;
+
+  cursor: pointer;
 }
 
 .movie-card-title {
