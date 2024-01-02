@@ -97,10 +97,12 @@ nav {
   display: flex;
   justify-content: center;
 
-  height: 70px;
+  height: 90px;
 
   background: #f5f5dc;
   border-bottom: 1px solid black;
+
+  padding-top: 15px;
 
   gap: 30px;
 }
@@ -108,6 +110,10 @@ nav {
 .search-err-msg {
   color: red;
   font-size: 14px;
+}
+
+.search-reset-button {
+  float: right;
 }
 
 .page-err-msg {
