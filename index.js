@@ -1,5 +1,7 @@
 // DOM 요소
 const $main = document.querySelector('main');
+const $searchInput = document.querySelector('.search-input');
+const $searchButton = document.querySelector('.search-button');
 
 // 전역 상태
 let page = 1;
@@ -65,32 +67,54 @@ const makeMovieCard = data => {
 };
 
 document.addEventListener('DOMContentLoaded', async () => {
-  const data = await getData();
-  //   const data = [];
+  //   const data = await getData();
+  const data = [];
 
-  //   for (let i = 0; i < 20; i++) {
-  //     if (i % 2 === 0) {
-  //       data.push({
-  //         title: 'The Shawshank Redemption',
-  //         overview:
-  //           'Framed in the 1940s for the double murder of his wife and her lover, upstanding banker Andy Dufresne begins a new life at the Shawshank prison, where he puts his accounting skills to work for an amoral warden. During his long stretch in prison, Dufresne comes to be admired by the other inmates -- including an older prisoner named Red -- for his integrity and unquenchable sense of hope.',
-  //         posterUrl:
-  //           'https://image.tmdb.org/t/p/w500/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg',
-  //         rating: 8.777
-  //       });
-  //     } else {
-  //       data.push({
-  //         title: 'The Lord of the Rings: The Return of the King',
-  //         overview:
-  //           'Framed in the 1940s for the double murder of his wife and her lover, upstanding banker Andy Dufresne begins a new life at the Shawshank prison, where he puts his accounting skills to work for an amoral warden. During his long stretch in prison, Dufresne comes to be admired by the other inmates -- including an older prisoner named Red -- for his integrity and unquenchable sense of hope.',
-  //         posterUrl:
-  //           'https://image.tmdb.org/t/p/w500/rCzpDGLbOoPwLjy3OAm5NUPOTrC.jpg',
-  //         rating: 9.111
-  //       });
-  //     }
-  //   }
+  for (let i = 0; i < 20; i++) {
+    if (i % 2 === 0) {
+      data.push({
+        title: 'The Shawshank Redemption',
+        overview:
+          'Framed in the 1940s for the double murder of his wife and her lover, upstanding banker Andy Dufresne begins a new life at the Shawshank prison, where he puts his accounting skills to work for an amoral warden. During his long stretch in prison, Dufresne comes to be admired by the other inmates -- including an older prisoner named Red -- for his integrity and unquenchable sense of hope.',
+        posterUrl:
+          'https://image.tmdb.org/t/p/w500/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg',
+        rating: 8.777
+      });
+    } else {
+      data.push({
+        title: 'The Lord of the Rings: The Return of the King',
+        overview:
+          'Framed in the 1940s for the double murder of his wife and her lover, upstanding banker Andy Dufresne begins a new life at the Shawshank prison, where he puts his accounting skills to work for an amoral warden. During his long stretch in prison, Dufresne comes to be admired by the other inmates -- including an older prisoner named Red -- for his integrity and unquenchable sense of hope.',
+        posterUrl:
+          'https://image.tmdb.org/t/p/w500/rCzpDGLbOoPwLjy3OAm5NUPOTrC.jpg',
+        rating: 9.111
+      });
+    }
+  }
 
   data.forEach(v => {
     makeMovieCard(v);
+  });
+});
+
+$searchButton.addEventListener('click', e => {
+  const text = $searchInput.value.toLowerCase();
+  const movieCards = document.querySelectorAll('.movie-card');
+
+  e.preventDefault();
+
+  if (text === '') {
+    alert('글자를 입력하세요');
+    return;
+  }
+
+  movieCards.forEach(v => {
+    const title = v.childNodes[1].textContent.toLowerCase();
+    console.log(text, title, title.includes(text));
+    if (!title.includes(text)) {
+      v.classList.add('hidden');
+    } else {
+      v.classList.remove('hidden');
+    }
   });
 });

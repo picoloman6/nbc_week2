@@ -98,6 +98,10 @@ nav {
   border-bottom: 1px solid black;
 }
 
+.hidden {
+  display: none;
+}
+
 @keyframes marquee {
   from {
     transform: translateX(20%);
