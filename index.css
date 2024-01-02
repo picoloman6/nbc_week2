@@ -37,14 +37,28 @@ main {
 
   width: 20%;
   min-width: 250px;
-  height: 350px;
+  height: 430px;
 
   background: white;
   margin: 15px 15px 15px 15px;
-  padding: 15px 15px 15px 15px;
+  padding: 15px 10px 10px 15px;
+
+  gap: 10px;
 }
 
 .movie-card-image {
-  width: 80%;
-  height: 60%;
+  width: 90%;
+  height: 70%;
+}
+
+.movie-card-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.movie-card-content {
+  height: 20%;
+
+  word-break: break-all;
+  overflow: auto;
 }
