@@ -72,7 +72,17 @@ main {
   word-break: break-all;
   overflow: auto;
 }
-/* ... */
+
+.movie-card-content::-webkit-scrollbar {
+  width: 6px;
+  height: 100%;
+}
+
+.movie-card-content::-webkit-scrollbar-thumb {
+  background: #a0a0a0;
+  border-radius: 5px;
+}
+
 @keyframes marquee {
   from {
     transform: translateX(20%);
