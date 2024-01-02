@@ -11,16 +11,17 @@
     <nav>
       <div class="search-wrapper">
         <span class="search-label">제목 검색</span>
-        <form class="search-form">
-          <input class="search-input" />
-          <button type="submit" class="search-button">입력</button>
-        </form>
-
+        <div>
+          <form class="search-form">
+            <input class="search-input" />
+            <button type="submit" class="search-button">입력</button>
+          </form>
+          <button class="search-reset-button">리셋</button>
+        </div>
         <span class="search-err-msg hidden"></span>
-        <button class="search-reset-button">리셋</button>
       </div>
       <div class="page-wrapper">
-        <span class="page-label">페이지 이동</span>
+        <span class="page-label">페이지 변경</span>
         <form class="page-form">
           <input class="page-input" />
           <button type="submit" class="page-button">입력</button>
