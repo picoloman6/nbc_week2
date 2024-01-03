@@ -34,7 +34,12 @@ jobs:
         with:
           node-version: 18
 
-      - name: create .env.default
+      - name: Create .env
+        run: |
+          touch .env
+          echo token=${{ secrets.TOKEN }}\ >> .env
+
+      - name: Create .env.default
         run: |
           touch .env.default
           echo token=${{ secrets.TOKEN }}\ >> .env.default
