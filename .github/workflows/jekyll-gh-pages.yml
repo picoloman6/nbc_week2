@@ -35,16 +35,19 @@ jobs:
           node-version: 18
 
       - name: Create .env
+        working-directory: ./
         run: |
           touch .env
           echo token=${{ secrets.TOKEN }}\ >> .env
 
       - name: Create .env.default
+        working-directory: ./
         run: |
           touch .env.default
           echo token=${{ secrets.TOKEN }}\ >> .env.default
 
       - name: Build
+        working-directory: ./
         run: |
           npm install
           npx webpack
