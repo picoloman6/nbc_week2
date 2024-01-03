@@ -37,12 +37,16 @@ jobs:
       - name: Create .env
         run: |
           touch .env
-          echo TOKEN=${{ secrets.TOKEN }}\ >> .env
+          echo TOKEN=${{ secrets.GITHUB_TOKEN }}\ >> .env
 
       - name: Create .env.default
         run: |
           touch .env.default
           echo TOKEN=${{ secrets.TOKEN }}\ >> .env.default
+
+      - name: Check Route
+        run: |
+          ls -a
 
       - name: Npm install
         run: |
