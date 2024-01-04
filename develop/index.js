@@ -80,11 +80,13 @@ const makeMovieCard = (data) => {
   $rating.textContent = `Average Rating : ${String(rating).padEnd(5, '0')}`;
   $image.src = posterUrl;
   $image.alt = 'no photo';
-  $image.dataset.movie = { id, title, rating };
+  $image.dataset.id = id;
+  $image.dataset.title = title;
+  $image.dataset.rating = rating;
   $overview.textContent = overview;
 
   $image.addEventListener('click', (e) => {
-    const modal = InfoModal(e.target.dataset.movie, $body);
+    const modal = InfoModal(e.target.dataset, $body);
     $body.appendChild(modal);
     $body.style.overflow = 'hidden';
   });

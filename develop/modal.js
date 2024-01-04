@@ -1,4 +1,5 @@
-export const InfoModal = ({ id, title, rating }, $body) => {
+export const InfoModal = (movie, $body) => {
+  const { id, title, rating } = movie;
   const $wrapper = document.createElement('div');
   const $modal = document.createElement('div');
   const $span = document.createElement('span');
