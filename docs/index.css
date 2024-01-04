@@ -147,6 +147,30 @@ button {
   display: none;
 }
 
+.info-modal-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  z-index: 10;
+
+  background: rgba(160, 160, 160, 0.7);
+}
+
+.info-modal-window {
+  width: 400px;
+  height: 300px;
+
+  background: #c92cc9;
+}
+
 @keyframes marquee {
   from {
     transform: translateX(20%);

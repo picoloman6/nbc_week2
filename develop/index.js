@@ -1,9 +1,12 @@
 const dotenv = require('dotenv');
 
+const { InfoModal } = require('./modal');
+
 dotenv.config();
 
 // DOM 요소
 const $main = document.querySelector('main');
+const $body = document.querySelector('body');
 const $searchInput = document.querySelector('.search-input');
 const $searchButton = document.querySelector('.search-button');
 const $serachResetButton = document.querySelector('.search-reset-button');
@@ -77,11 +80,13 @@ const makeMovieCard = (data) => {
   $rating.textContent = `Average Rating : ${String(rating).padEnd(5, '0')}`;
   $image.src = posterUrl;
   $image.alt = 'no photo';
-  $image.dataset.movie = { idx, title, rating };
+  $image.dataset.movie = { id, title, rating };
   $overview.textContent = overview;
 
   $image.addEventListener('click', (e) => {
-    alert(`영화 아이디 : ${e.target.dataset.movie}`);
+    const modal = InfoModal(e.target.dataset.movie, $body);
+    $body.appendChild(modal);
+    $body.style.overflow = 'hidden';
   });
 
   $wrapper.appendChild($image);
