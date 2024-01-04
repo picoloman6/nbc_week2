@@ -44,10 +44,6 @@ jobs:
           touch .env.default
           echo TOKEN=${{ secrets.TOKEN }}\ >> .env.default
 
-      - name: Check Route
-        run: |
-          ls -a
-
       - name: Npm install
         run: |
           npm install
@@ -55,6 +51,10 @@ jobs:
       - name: build
         run: |
           npm run build
+
+      - name: Check Route
+        run: |
+          ls -a
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
