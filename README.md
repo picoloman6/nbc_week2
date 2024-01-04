@@ -44,7 +44,7 @@
 
 ![workflow](./readmeimg/workflow.png)
 
-- 기존 yml 파일 수정 해 runner 환경에서 webpack 번들링 진행
+- 기본 배포용 yml 파일 수정 해 runner 환경에서 webpack 번들링 진행
 - URI : https://picoloman6.github.io/nbc_week2/
 
 ### 최종 디렉토리 구조
