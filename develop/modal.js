@@ -1,4 +1,4 @@
-export const InfoModal = (movie, $body) => {
+const InfoModal = (movie, $body) => {
   const { id, title, rating } = movie;
 
   const $wrapper = document.createElement('div');
@@ -48,3 +48,5 @@ export const InfoModal = (movie, $body) => {
 
   return $wrapper;
 };
+
+export default InfoModal;

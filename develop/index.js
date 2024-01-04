@@ -1,6 +1,4 @@
-const dotenv = require('dotenv');
-
-const { InfoModal } = require('./modal');
+import dotenv from 'dotenv';
 
 dotenv.config();
 
@@ -85,8 +83,10 @@ const makeMovieCard = (data) => {
   $image.dataset.rating = rating;
   $overview.textContent = overview;
 
-  $image.addEventListener('click', (e) => {
-    const modal = InfoModal(e.target.dataset, $body);
+  $image.addEventListener('click', async (e) => {
+    const InfoModal = await import('./modal');
+    const modal = InfoModal.default(e.target.dataset, $body);
+
     $body.appendChild(modal);
     $body.style.overflow = 'hidden';
   });
