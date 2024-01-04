@@ -77,11 +77,11 @@ const makeMovieCard = (data) => {
   $rating.textContent = `Average Rating : ${String(rating).padEnd(5, '0')}`;
   $image.src = posterUrl;
   $image.alt = 'no photo';
-  $image.dataset.id = id;
+  $image.dataset.movie = { idx, title, rating };
   $overview.textContent = overview;
 
   $image.addEventListener('click', (e) => {
-    alert(`영화 아이디 : ${e.target.dataset.id}`);
+    alert(`영화 아이디 : ${e.target.dataset.movie}`);
   });
 
   $wrapper.appendChild($image);
