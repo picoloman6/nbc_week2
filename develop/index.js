@@ -103,7 +103,6 @@ const makeMovieCard = (data) => {
 document.addEventListener('DOMContentLoaded', async () => {
   try {
     const data = await getData();
-
     data.forEach((v) => {
       makeMovieCard(v);
     });

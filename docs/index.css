@@ -62,11 +62,6 @@ main {
   text-align: center;
 }
 
-.slide-text {
-  white-space: nowrap;
-  animation: marquee 5s linear infinite;
-}
-
 .movie-card-overview {
   height: 20%;
 
@@ -92,6 +87,7 @@ main {
   font-weight: bold;
 }
 
+/* nav */
 nav {
   display: flex;
   justify-content: center;
@@ -131,22 +127,7 @@ nav {
   font-size: 13px;
 }
 
-button {
-  width: 70px;
-  height: 30px;
-  color: #d7fff1;
-
-  background-color: #77af9c;
-  border: none;
-  border-radius: 8px;
-
-  cursor: pointer;
-}
-
-.hidden {
-  display: none;
-}
-
+/* modal */
 .info-modal-wrapper {
   display: flex;
   justify-content: center;
@@ -203,6 +184,28 @@ button {
 
 .info-modal-button {
   margin-bottom: 30px;
+}
+
+/* 공통 */
+.slide-text {
+  white-space: nowrap;
+  animation: marquee 5s linear infinite;
+}
+
+button {
+  width: 70px;
+  height: 30px;
+  color: #d7fff1;
+
+  background-color: #77af9c;
+  border: none;
+  border-radius: 8px;
+
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
 }
 
 @keyframes marquee {
