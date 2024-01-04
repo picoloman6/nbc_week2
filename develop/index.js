@@ -23,7 +23,7 @@ const getData = async () => {
     method: 'GET',
     headers: {
       accept: 'application/json',
-      Authorization: process.env.token
+      Authorization: process.env.TOKEN
     }
   };
 
