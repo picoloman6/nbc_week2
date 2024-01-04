@@ -1,18 +1,23 @@
 export const InfoModal = (movie, $body) => {
   const { id, title, rating } = movie;
+
   const $wrapper = document.createElement('div');
   const $modal = document.createElement('div');
-  const $span = document.createElement('span');
+  const $title = document.createElement('span');
+  const $content = document.createElement('span');
   const $button = document.createElement('button');
 
   $wrapper.className = 'info-modal-wrapper';
   $modal.className = 'info-modal-window';
-  $span.className = 'info-modal-content';
+  $title.className = 'info-modal-title';
+  $content.className = 'info-modal-content';
 
-  $span.textContent = `${title}(id : ${id})의 평점은 ${rating}점입니다.`;
+  $title.textContent = title;
+  $content.textContent = `ID : ${id} 평점 : ${rating}`;
   $button.textContent = '닫기';
 
-  $modal.appendChild($span);
+  $modal.appendChild($title);
+  $modal.appendChild($content);
   $modal.appendChild($button);
   $wrapper.appendChild($modal);
 
