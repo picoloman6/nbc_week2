@@ -44,6 +44,14 @@ jobs:
           touch .env.default
           echo TOKEN=${{ secrets.TOKEN }}\ >> .env.default
 
+      - name: check
+        run: |
+          cat .env
+
+      - name: chekc2
+        run: |
+          cat .env.default
+
       - name: Npm install
         run: |
           npm install
