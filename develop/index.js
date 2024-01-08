@@ -82,14 +82,6 @@ const makeMovieCard = (data) => {
   $image.dataset.rating = rating;
   $overview.textContent = overview;
 
-  $image.addEventListener('click', async (e) => {
-    const InfoModal = await import('./modal');
-    const modal = InfoModal.default(e.target.dataset, $body);
-
-    $body.appendChild(modal);
-    $body.style.overflow = 'hidden';
-  });
-
   $wrapper.appendChild($image);
   $wrapper.appendChild($title);
   $wrapper.appendChild($overview);
@@ -189,6 +181,16 @@ $pageButton.addEventListener('click', async (e) => {
   });
 
   errMsg.classList.add('hidden');
+});
+
+$main.addEventListener('click', async (e) => {
+  if (e.target.tagName === 'IMG') {
+    const InfoModal = await import('./modal');
+    const modal = InfoModal.default(e.target.dataset, $body);
+
+    $body.appendChild(modal);
+    $body.style.overflow = 'hidden';
+  }
 });
 
 // 초기화 누르면 검색 이전으로
