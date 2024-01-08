@@ -135,7 +135,7 @@ $searchButton.addEventListener('click', (e) => {
   }
 
   movieCards.forEach((v) => {
-    if (!result.includes(text)) {
+    if (!result.includes(v)) {
       v.classList.add('hidden');
     } else {
       v.classList.remove('hidden');
