@@ -22,12 +22,15 @@ header > h1 {
 }
 
 /* main */
-main {
+.main {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
 
   width: 100%;
+
+  margin: 0;
+  padding: 0;
 
   background: #feddd5;
 }

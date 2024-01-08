@@ -3,7 +3,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 // DOM 요소
-const $main = document.querySelector('main');
+const $main = document.querySelector('.main');
 const $body = document.querySelector('body');
 const $searchInput = document.querySelector('.search-input');
 const $searchButton = document.querySelector('.search-button');
@@ -58,7 +58,7 @@ const getData = async () => {
 const makeMovieCard = (data) => {
   const { id, title, rating, posterUrl, overview } = data;
 
-  const $wrapper = document.createElement('div');
+  const $wrapper = document.createElement('li');
   const $title = document.createElement('div');
   const $rating = document.createElement('div');
   const $image = document.createElement('img');
