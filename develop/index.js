@@ -116,6 +116,7 @@ $searchButton.addEventListener('click', (e) => {
   const text = $searchInput.value.toLowerCase();
   const movieCards = document.querySelectorAll('.movie-card');
   const errMsg = document.querySelector('.search-err-msg');
+  const result = [];
 
   e.preventDefault();
 
@@ -133,8 +134,17 @@ $searchButton.addEventListener('click', (e) => {
 
   movieCards.forEach((v) => {
     const title = v.childNodes[1].textContent.toLowerCase();
-    v.childNodes;
-    if (!title.includes(text)) {
+    title.includes(text) && result.push(v);
+  });
+
+  if (result.length === 0) {
+    errMsg.textContent = '일치하는 제목이 없습니다.';
+    errMsg.classList.remove('hidden');
+    return;
+  }
+
+  movieCards.forEach((v) => {
+    if (!result.includes(text)) {
       v.classList.add('hidden');
     } else {
       v.classList.remove('hidden');
