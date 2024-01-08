@@ -99,7 +99,7 @@ const makeMovieCard = (data) => {
   $main.appendChild($wrapper);
 };
 
-// 페이지 시작 후 이벤트
+// 페이지 렌더링 후 이벤트
 document.addEventListener('DOMContentLoaded', async () => {
   try {
     const data = await getData();
@@ -133,6 +133,7 @@ $searchButton.addEventListener('click', (e) => {
 
   movieCards.forEach((v) => {
     const title = v.childNodes[1].textContent.toLowerCase();
+    v.childNodes;
     if (!title.includes(text)) {
       v.classList.add('hidden');
     } else {
