@@ -29,8 +29,7 @@ const getData = async () => {
   };
 
   try {
-    const res = await fetch(url, options);
-    const data = await res.json();
+    const data = await fetch(url, options).then((res) => res.json());
     const results = data.results.map((v) => ({
       id: v['id'],
       title: v['title'],
