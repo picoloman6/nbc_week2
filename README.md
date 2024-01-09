@@ -1,3 +1,16 @@
+# 깃허브 배포
+
+https://picoloman6.github.io/nbc_week2/
+
+# 기술스택
+
+- JavaScript
+- dotenv
+- Webpack
+- Babel
+
+# 스크린샷
+
 ### 메인화면
 
 ![메인화면](./readmeimg/메인%20화면.PNG)
@@ -26,6 +39,8 @@
 
 ![유효성검사](./readmeimg/유효성%20검사.PNG)
 
+# 기술적 도전
+
 ### dotenv 적용
 
 ![dotenv](./readmeimg/dotenv.PNG)
@@ -45,8 +60,7 @@
 ![workflow](./readmeimg/workflow.png)
 
 - 기본 배포용 yml 파일 수정 해 runner 환경에서 webpack 번들링 진행
-- URI : https://picoloman6.github.io/nbc_week2/
 
-### 최종 디렉토리 구조
+# 최종 디렉토리 구조
 
 ![디렉토리구조](./readmeimg/디렉토리%20구조.PNG)
