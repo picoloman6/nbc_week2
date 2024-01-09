@@ -24,7 +24,7 @@ const getData = async () => {
     method: 'GET',
     headers: {
       accept: 'application/json',
-      Authorization: process.env.TOKEN
+      Authorization: `Bearer ${process.env.TOKEN}`
     }
   };
 
