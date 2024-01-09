@@ -1,5 +1,5 @@
 node_modules
-docs/index.js
-docs/develop_modal_js.index.js
+deploy/index.js
+deploy/js_modal_js.index.js
 .env
 .env.default

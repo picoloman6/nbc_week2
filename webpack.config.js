@@ -4,9 +4,9 @@ const DotenvPlugin = require('webpack-dotenv-plugin');
 
 module.exports = {
   mode: 'development',
-  entry: './develop/index.js',
+  entry: './js/index.js',
   output: {
-    path: path.resolve(__dirname, 'docs'),
+    path: path.resolve(__dirname, 'deploy'),
     filename: 'index.js'
   },
   module: {
