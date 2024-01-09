@@ -76,7 +76,7 @@ const makeMovieCard = (data) => {
   $title.textContent = title;
   $rating.textContent = `Average Rating : ${String(rating).padEnd(5, '0')}`;
   $image.src = posterUrl;
-  $image.alt = 'no photo';
+  $image.alt = title;
   $image.dataset.id = id;
   $image.dataset.title = title;
   $image.dataset.rating = rating;
