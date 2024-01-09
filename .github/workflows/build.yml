@@ -54,7 +54,7 @@ jobs:
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
         with:
-          source: ./docs # 경로수정
+          source: ./deploy # 경로수정
           destination: ./_site
 
       - name: Upload artifact
