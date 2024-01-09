@@ -1,6 +1,7 @@
-# 깃허브 배포
+# 사용법
 
-https://picoloman6.github.io/nbc_week2/
+- 배포 주소 : https://picoloman6.github.io/nbc_week2/
+- 로컬 : .env, .env.default로 tmdb api 생성 -> yarn build -> deploy/index.html
 
 # 기술스택
 
